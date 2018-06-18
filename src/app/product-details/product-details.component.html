@@ -1,0 +1,24 @@
+<section>
+  <fieldset>
+    <legend>Product Details</legend>
+    <p>To delete the product quanity must be 0</p>
+    <br>
+    <form (submit)='onDelete()'>
+
+      <div>
+        <label>Name: {{ product.name }} </label>
+        <br>
+        <label>Qty: {{ product.qty }} </label>
+        <br>
+        <label>Price: {{ product.price }} </label>
+        <br>
+      </div>
+      <br>
+      <div>
+        <button type="button" (click)='back()'>Back</button>
+        <button [disabled]="deleteDisable" type="submit">Delete</button>
+      </div>
+
+    </form>
+  </fieldset>
+</section>

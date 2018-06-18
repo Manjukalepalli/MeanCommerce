@@ -1,0 +1,33 @@
+<section>
+  <fieldset>
+    <legend>Product List</legend>
+    <form>
+      <a [routerLink]="['new']" class="btn-primary">Add New Product</a>
+      <br>
+      <br>
+      <table class="container-fluid">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let product of products'>
+            <td>{{product._id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.price}}</td>
+            <td>
+              <a [routerLink]="[ product._id,'edit']" class="btn">Edit</a>
+              <a [routerLink]="[ product._id]" class="btn-delete">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </fieldset>
+</section>
