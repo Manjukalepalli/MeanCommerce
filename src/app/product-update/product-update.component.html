@@ -1,42 +1,37 @@
-<section>
-  <fieldset>
-    <legend>Product Update</legend>
-    <p>To delete the product quanity must be 0</p>
+<div class="container">
+  <h2>Product Update</h2>
+  <form (submit)='onUpdate()' #updateForm='ngForm'>
+    <div>
+      <label>Name:</label>
+      <input name="name" type="text" minlength="3" pattern="" required #name='ngModel' [(ngModel)]="product.name">
+      <div *ngIf="name.errors && (name.touched || name.dirty) ">
+        <p *ngIf="name.errors.required" class="errors">Valid first name is required</p>
+        <p *ngIf="name.errors.minlength" class="errors">Must be at least {{ name.errors.minlength.requiredLength }} characters</p>
+      </div>
+    </div>
+
+    <div>
+      <label>Qty :</label>
+      <input name="qty" type="number" min="0" required #qty='ngModel' [(ngModel)]="product.qty">
+      <div *ngIf="qty.errors && (qty.touched || qty.dirty) ">
+        <p *ngIf="qty.errors.required" class="errors">Quantity is required and should be number</p>
+        <p *ngIf="qty.errors.min" class="errors">Must be at greater then {{ qty.errors.min }}</p>
+      </div>
+    </div>
+
+    <div>
+      <label>Price :</label>
+      <input name="price" type="number" min="0.01" required #price='ngModel' [(ngModel)]="product.price">
+      <div *ngIf="price.errors && (price.touched || price.dirty) ">
+        <p *ngIf="price.errors.required" class="errors">Price is required and should be number</p>
+        <p *ngIf="price.errors.min" class="errors">Must be at greater then {{ price.errors.min }}</p>
+      </div>
+    </div>
     <br>
-    <form (submit)='onUpdate()' #updateForm='ngForm'>
+    <div>
+      <button type="button" (click)='reset(updateForm)' class="btn btn-primary">Reset</button>
+      <button [disabled]='updateForm.invalid' type="submit" class="btn btn-primary">Update</button>
+    </div>
 
-      <div>
-        <label>Name:</label>
-        <input name="name" type="text" minlength="3" pattern="" required #name='ngModel' [(ngModel)]="product.name">
-        <div *ngIf="name.errors && (name.touched || name.dirty) ">
-          <p *ngIf="name.errors.required" class="errors">Valid first name is required</p>
-          <p *ngIf="name.errors.minlength" class="errors">Must be at least {{ name.errors.minlength.requiredLength }} characters</p>
-        </div>
-      </div>
-
-      <div>
-        <label>Qty :</label>
-        <input name="qty" type="number" min="0" required #qty='ngModel' [(ngModel)]="product.qty">
-        <div *ngIf="qty.errors && (qty.touched || qty.dirty) ">
-          <p *ngIf="qty.errors.required" class="errors">Quantity is required and should be number</p>
-          <p *ngIf="qty.errors.min" class="errors">Must be at greater then {{ qty.errors.min }}</p>
-        </div>
-      </div>
-
-      <div>
-        <label>Price :</label>
-        <input name="price" type="number" min="0.01" required #price='ngModel' [(ngModel)]="product.price">
-        <div *ngIf="price.errors && (price.touched || price.dirty) ">
-          <p *ngIf="price.errors.required" class="errors">Price is required and should be number</p>
-          <p *ngIf="price.errors.min" class="errors">Must be at greater then {{ price.errors.min }}</p>
-        </div>
-      </div>
-      <br>
-      <div>
-        <button type="button" (click)='reset(updateForm)'>Reset</button>
-        <button [disabled]='updateForm.invalid' type="submit">Update</button>
-      </div>
-
-    </form>
-  </fieldset>
-</section>
+  </form>
+</div>

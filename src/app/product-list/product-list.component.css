@@ -1,12 +1,16 @@
-table button {
-  width: fit-content;
-  padding: 5px 10px;
-  background-color: #003300;
-  color: white;
-  border: 1px solid #003300;
-  border-radius: 5px;
-  box-shadow: 1px 2px 3px #252525;
-  margin: 10px auto 0px auto;
-  font-size: 1em;
-  cursor: pointer;
+th {
+  background-color:#9fc3e0;
+  color: black;
+  text-align: center;
+}
+
+td > a{
+  padding: 12px;
+  margin: 4px;
+}
+
+.container {
+  margin: 25px;
+  padding: 15px;
+  border: 1.5px solid #003300;
 }

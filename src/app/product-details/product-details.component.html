@@ -1,24 +1,23 @@
-<section>
-  <fieldset>
-    <legend>Product Details</legend>
-    <p>To delete the product quanity must be 0</p>
-    <br>
-    <form (submit)='onDelete()'>
-
-      <div>
+<div class="container">
+  <h2>Product Details</h2>
+  <p>To delete the product quanity must be 0</p>
+  <br>
+  <form (submit)='onDelete()'>
+    <div>
+      <p>
         <label>Name: {{ product.name }} </label>
-        <br>
+      </p>
+      <p>
         <label>Qty: {{ product.qty }} </label>
-        <br>
+      </p>
+      <p>
         <label>Price: {{ product.price }} </label>
-        <br>
-      </div>
-      <br>
-      <div>
-        <button type="button" (click)='back()'>Back</button>
-        <button [disabled]="deleteDisable" type="submit">Delete</button>
-      </div>
-
-    </form>
-  </fieldset>
-</section>
+      </p>
+    </div>
+    <br>
+    <div>
+      <button type="button" (click)='back()' class="btn btn-primary">Back</button>
+      <button [disabled]="deleteDisable" type="submit" class="btn btn-danger">Delete</button>
+    </div>
+  </form>
+</div>
