@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { MinValueDirective } from './CustomDirectives/min-value.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     ProductListComponent,
     ProductDetailsComponent,
     ProductNewComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    MinValueDirective
   ],
   imports: [
     BrowserModule,

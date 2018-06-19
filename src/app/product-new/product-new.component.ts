@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import {NG_VALIDATORS} from '@angular/forms';
 
 import { ProductService } from '../services/product.service';
 import { Product } from '../product';
@@ -14,6 +15,7 @@ import { Product } from '../product';
 
 export class ProductNewComponent implements OnInit {
   product = new Product();
+  minNum = 0;
 
   constructor(
     private productService: ProductService,
