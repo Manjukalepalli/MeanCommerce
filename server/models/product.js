@@ -11,12 +11,12 @@ const productSchema = new Schema({
     qty:  {
       type: Number,
       required: [true, "Please enter the product's qty."],
-      min: 0,
+      min: [0, "Qty need to be greater than or equals to zero"] ,
     },
     price: {
       type: Number,
       required: [true, "Please enter the product's price."],
-      min: 0,
+      min: [0,"Price need to be greater than or equals to zero"]
     }
 },
 {
